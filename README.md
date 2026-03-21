@@ -103,25 +103,25 @@ geni-shield/
 
 ## 🗺️ Roadmap
 
-### Q2–Q3 2026 — Diabetes MVP (Cairo Pilot)
+### Q1–Q2 2025 — Diabetes MVP (Cairo Pilot)
 - [ ] Closed beta: 500 diabetic patients from AUC network
 - [ ] CGM (Continuous Glucose Monitor) sensor integration
 - [ ] PoH algorithm v1 — glucose + steps correlation
 - [ ] GNI token deployed on Polygon testnet
 - [ ] Regulatory sandbox partnership with 1 Egyptian insurer
 
-### Q4 2026 — Scale to Freelancers & Youth
+### Q3 2025 — Scale to Freelancers & Youth
 - [ ] Open beta: 10,000 users
 - [ ] Wearable SDK: Apple Watch, Garmin, Xiaomi
 - [ ] GNI mainnet launch with real premium discounts
 - [ ] Arabic-first UX / accessibility pass
 
-### Q1 2027 — AI+ & B2B Enterprise
+### Q4 2025 — AI+ & B2B Enterprise
 - [ ] Optional genomic risk scoring layer (federated, opt-in)
 - [ ] B2B dashboard for SMEs to offer Geni-Shield as employee benefit
 - [ ] 100,000 active users milestone
 
-### 2027 — North Africa Expansion
+### 2026 — North Africa Expansion
 - [ ] Morocco, Tunisia, KSA market entry
 - [ ] 1,000,000+ active policyholders
 - [ ] Series A fundraising
