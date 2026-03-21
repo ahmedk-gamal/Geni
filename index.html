@@ -53,14 +53,45 @@
       overflow-x: hidden;
     }
 
-    /* ─── Grid Background ─────────────────────────────── */
-    .grid-bg {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(0,210,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,210,255,.04) 1px, transparent 1px);
-      background-size: 60px 60px;
+    /* ─── Aurora Blobs ────────────────────────────────── */
+    .aurora-blob {
+      position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none;
+      mix-blend-mode: screen;
     }
+    #ab1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,210,255,.09) 0%, transparent 70%);
+      animation: drift1 18s ease-in-out infinite;
+    }
+    #ab2 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(40,167,69,.07) 0%, transparent 70%);
+      animation: drift2 22s ease-in-out infinite;
+    }
+    #ab3 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(124,58,237,.06) 0%, transparent 70%);
+      animation: drift3 26s ease-in-out infinite;
+    }
+    @keyframes drift1 {
+      0%  { transform: translate(-10%, -10%) scale(1);   }
+      33% { transform: translate(60%, 20%) scale(1.15);  }
+      66% { transform: translate(20%, 70%) scale(.9);    }
+      100%{ transform: translate(-10%, -10%) scale(1);   }
+    }
+    @keyframes drift2 {
+      0%  { transform: translate(70%, 60%) scale(1);     }
+      33% { transform: translate(-5%, 80%) scale(1.2);   }
+      66% { transform: translate(80%, -10%) scale(.85);  }
+      100%{ transform: translate(70%, 60%) scale(1);     }
+    }
+    @keyframes drift3 {
+      0%  { transform: translate(40%, 10%) scale(1);     }
+      33% { transform: translate(-10%, 50%) scale(1.1);  }
+      66% { transform: translate(75%, 75%) scale(.95);   }
+      100%{ transform: translate(40%, 10%) scale(1);     }
+    }
+
     .noise-overlay {
       position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -300,9 +331,14 @@
 </head>
 <body>
 
-<!-- ═══ Fixed BG decorations ════════════════════════════════ -->
-<div class="grid-bg"></div>
+<!-- ═══ Dynamic Background ══════════════════════════════════ -->
+<canvas id="bgCanvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;"></canvas>
 <div class="noise-overlay"></div>
+<div id="aurora" style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;">
+  <div class="aurora-blob" id="ab1"></div>
+  <div class="aurora-blob" id="ab2"></div>
+  <div class="aurora-blob" id="ab3"></div>
+</div>
 
 <!-- ═══ NAV ════════════════════════════════════════════════ -->
 <nav>
@@ -790,10 +826,10 @@
         <div class="glass-card p-6">
           <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
             <div class="flex items-center gap-3">
-              <div class="tag tag-green">Q1–Q2 2025</div>
+              <div class="tag tag-green">Q2–Q3 2026</div>
               <div class="tag" style="background:rgba(40,167,69,.15);border:1px solid rgba(40,167,69,.25);color:#28a745;font-family:'JetBrains Mono',monospace;font-size:.7rem;">MVP</div>
             </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Month 1–6</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 1</div>
           </div>
           <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">Diabetes MVP — Cairo Pilot</h3>
           <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
@@ -811,10 +847,10 @@
         <div class="glass-card p-6">
           <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
             <div class="flex items-center gap-3">
-              <div class="tag tag-blue">Q3 2025</div>
+              <div class="tag tag-blue">Q4 2026</div>
               <div class="tag" style="background:rgba(0,210,255,.15);border:1px solid rgba(0,210,255,.25);color:#00d2ff;font-family:'JetBrains Mono',monospace;font-size:.7rem;">SCALE</div>
             </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Month 7–9</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 2</div>
           </div>
           <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">Freelancer & Youth Expansion</h3>
           <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
@@ -832,10 +868,10 @@
         <div class="glass-card p-6">
           <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
             <div class="flex items-center gap-3">
-              <div class="tag tag-purple">Q4 2025</div>
+              <div class="tag tag-purple">Q1 2027</div>
               <div class="tag" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.25);color:#a78bfa;font-family:'JetBrains Mono',monospace;font-size:.7rem;">AI+</div>
             </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Month 10–12</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 3</div>
           </div>
           <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">DNA Insights Layer + B2B Enterprise</h3>
           <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
@@ -854,10 +890,10 @@
           <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#28a745,#00d2ff,#7c3aed);border-radius:20px 20px 0 0;"></div>
           <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
             <div class="flex items-center gap-3">
-              <div class="tag" style="background:linear-gradient(135deg,rgba(0,210,255,.2),rgba(40,167,69,.2));border:1px solid rgba(0,210,255,.3);color:#00d2ff;font-family:'JetBrains Mono',monospace;font-size:.72rem;">2026 & Beyond</div>
+              <div class="tag" style="background:linear-gradient(135deg,rgba(0,210,255,.2),rgba(40,167,69,.2));border:1px solid rgba(0,210,255,.3);color:#00d2ff;font-family:'JetBrains Mono',monospace;font-size:.72rem;">2027 & Beyond</div>
               <div class="tag" style="background:linear-gradient(135deg,rgba(0,210,255,.15),rgba(40,167,69,.15));border:1px solid rgba(0,210,255,.2);color:#00d2ff;font-family:'JetBrains Mono',monospace;font-size:.7rem;">🌍 EXPAND</div>
             </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Year 2+</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 4</div>
           </div>
           <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">North Africa Expansion</h3>
           <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
@@ -949,7 +985,7 @@
       </div>
 
       <div style="font-size:.8rem;color:#8892a4;text-align:center;">
-        Built with <span style="color:#28a745;">زكاة العلم</span> — Give Back to Community · Cairo, Egypt 🇪🇬
+        Built with ❤️ in Cairo, Egypt 🇪🇬 · <span style="color:#28a745;"> </span> — Give Back to Community
       </div>
 
       <div class="flex items-center gap-4">
@@ -1114,6 +1150,115 @@
       if(target){ e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
+
+  // ── Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 60){
+      nav.style.background = 'rgba(12,15,24,.95)';
+      nav.style.borderBottomColor = 'rgba(0,210,255,.14)';
+    } else {
+      nav.style.background = 'rgba(12,15,24,.8)';
+      nav.style.borderBottomColor = 'rgba(0,210,255,.08)';
+    }
+  });
+
+  // ── Dynamic Canvas Neural Network Background
+  (function(){
+    const canvas = document.getElementById('bgCanvas');
+    const ctx    = canvas.getContext('2d');
+    let W, H, nodes = [], mouse = { x: -9999, y: -9999 };
+    const NODE_COUNT = 55, CONNECT_DIST = 160, MOUSE_DIST = 200;
+
+    function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+
+    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+    class Node {
+      constructor(){
+        this.x  = Math.random() * W;
+        this.y  = Math.random() * H;
+        this.vx = (Math.random() - .5) * .35;
+        this.vy = (Math.random() - .5) * .35;
+        this.r  = Math.random() * 1.8 + .8;
+        this.color = Math.random() > .6 ? '#28a745' : Math.random() > .5 ? '#7c3aed' : '#00d2ff';
+      }
+      update(){
+        this.x += this.vx; this.y += this.vy;
+        if(this.x < 0 || this.x > W) this.vx *= -1;
+        if(this.y < 0 || this.y > H) this.vy *= -1;
+        // subtle mouse repulsion
+        const dx = this.x - mouse.x, dy = this.y - mouse.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < MOUSE_DIST){
+          const force = (MOUSE_DIST - dist) / MOUSE_DIST * .6;
+          this.x += dx / dist * force;
+          this.y += dy / dist * force;
+        }
+      }
+      draw(){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = .55;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    for(let i=0;i<NODE_COUNT;i++) nodes.push(new Node());
+
+    function drawConnections(){
+      for(let i=0;i<nodes.length;i++){
+        for(let j=i+1;j<nodes.length;j++){
+          const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx*dx+dy*dy);
+          if(dist < CONNECT_DIST){
+            const alpha = (1 - dist/CONNECT_DIST) * .18;
+            const grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+            grad.addColorStop(0, nodes[i].color);
+            grad.addColorStop(1, nodes[j].color);
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = grad;
+            ctx.globalAlpha = alpha;
+            ctx.lineWidth = .8;
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+    }
+
+    function loop(){
+      ctx.clearRect(0, 0, W, H);
+      nodes.forEach(n => { n.update(); n.draw(); });
+      drawConnections();
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+
+  // ── Heartbeat SVG line animation in hero coin ring
+  (function(){
+    const ring = document.querySelector('.coin-ring');
+    if(!ring) return;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 120 30');
+    svg.setAttribute('width','80'); svg.setAttribute('height','20');
+    svg.style.cssText = 'position:absolute;bottom:8px;left:50%;transform:translateX(-50%);opacity:.4;';
+    const path = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+    path.setAttribute('points','0,15 20,15 25,5 30,25 35,10 40,15 60,15 65,5 70,25 75,10 80,15 100,15 105,5 110,25 115,10 120,15');
+    path.setAttribute('fill','none'); path.setAttribute('stroke','#28a745'); path.setAttribute('stroke-width','1.5');
+    path.style.cssText = 'stroke-dasharray:300;stroke-dashoffset:300;animation:hb 2.5s linear infinite;';
+    svg.appendChild(path);
+    ring.appendChild(svg);
+    const style = document.createElement('style');
+    style.textContent = '@keyframes hb{0%{stroke-dashoffset:300}100%{stroke-dashoffset:-300}}';
+    document.head.appendChild(style);
+  })();
 </script>
 </body>
 </html>
