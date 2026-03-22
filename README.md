@@ -1,4 +1,5 @@
 # 🛡️ Geni-Shield — Your Health is Your Currency
+![unnamed](https://github.com/user-attachments/assets/58207bac-b689-4a60-a7b3-f105db664f5c)
 
 <div align="center">
 
