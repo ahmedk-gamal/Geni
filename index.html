@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geni-Shield — Your Health is Your Currency</title>
-  <meta name="description" content="Geni-Shield: Egypt's first behavioral-based InsurTech. Turn your healthy habits into insurance coverage through AI, Blockchain, and Wearable tech." />
+  <title>Geni-Shield — Your Health is Your Currency | Behavioral InsurTech Egypt</title>
+  <meta name="description" content="Geni-Shield: Egypt's first behavioral InsurTech. Turn healthy habits into insurance coverage with privacy-first AI, Proof-of-Health protocol, and Zakat Al-Ilm impact." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind + AOS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
@@ -42,76 +40,33 @@
   </script>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background-color: #0c0f18;
       color: #e2e8f0;
       font-family: 'DM Sans', sans-serif;
       overflow-x: hidden;
     }
-
-    /* ─── Aurora Blobs ────────────────────────────────── */
+    /* Aurora blobs */
     .aurora-blob {
       position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none;
       mix-blend-mode: screen;
     }
-    #ab1 {
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(0,210,255,.09) 0%, transparent 70%);
-      animation: drift1 18s ease-in-out infinite;
-    }
-    #ab2 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(40,167,69,.07) 0%, transparent 70%);
-      animation: drift2 22s ease-in-out infinite;
-    }
-    #ab3 {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(124,58,237,.06) 0%, transparent 70%);
-      animation: drift3 26s ease-in-out infinite;
-    }
-    @keyframes drift1 {
-      0%  { transform: translate(-10%, -10%) scale(1);   }
-      33% { transform: translate(60%, 20%) scale(1.15);  }
-      66% { transform: translate(20%, 70%) scale(.9);    }
-      100%{ transform: translate(-10%, -10%) scale(1);   }
-    }
-    @keyframes drift2 {
-      0%  { transform: translate(70%, 60%) scale(1);     }
-      33% { transform: translate(-5%, 80%) scale(1.2);   }
-      66% { transform: translate(80%, -10%) scale(.85);  }
-      100%{ transform: translate(70%, 60%) scale(1);     }
-    }
-    @keyframes drift3 {
-      0%  { transform: translate(40%, 10%) scale(1);     }
-      33% { transform: translate(-10%, 50%) scale(1.1);  }
-      66% { transform: translate(75%, 75%) scale(.95);   }
-      100%{ transform: translate(40%, 10%) scale(1);     }
-    }
-
+    #ab1 { width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,210,255,.09) 0%, transparent 70%); animation: drift1 18s ease-in-out infinite; }
+    #ab2 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(40,167,69,.07) 0%, transparent 70%); animation: drift2 22s ease-in-out infinite; }
+    #ab3 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(124,58,237,.06) 0%, transparent 70%); animation: drift3 26s ease-in-out infinite; }
+    @keyframes drift1 { 0% { transform: translate(-10%, -10%) scale(1); } 33% { transform: translate(60%, 20%) scale(1.15); } 66% { transform: translate(20%, 70%) scale(.9); } 100% { transform: translate(-10%, -10%) scale(1); } }
+    @keyframes drift2 { 0% { transform: translate(70%, 60%) scale(1); } 33% { transform: translate(-5%, 80%) scale(1.2); } 66% { transform: translate(80%, -10%) scale(.85); } 100% { transform: translate(70%, 60%) scale(1); } }
+    @keyframes drift3 { 0% { transform: translate(40%, 10%) scale(1); } 33% { transform: translate(-10%, 50%) scale(1.1); } 66% { transform: translate(75%, 75%) scale(.95); } 100% { transform: translate(40%, 10%) scale(1); } }
     .noise-overlay {
       position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
       background-size: 200px;
     }
-
-    /* ─── Glowing Orbs ─────────────────────────────────── */
-    .orb {
-      position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none;
-    }
-    .orb-blue  { width: 500px; height: 500px; background: rgba(0,210,255,.08); }
-    .orb-green { width: 400px; height: 400px; background: rgba(40,167,69,.07);  }
-    .orb-purple{ width: 350px; height: 350px; background: rgba(124,58,237,.06);}
-
-    /* ─── Glass Cards ──────────────────────────────────── */
     .glass-card {
       background: rgba(19,25,41,.7);
       border: 1px solid rgba(0,210,255,.12);
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border-radius: 20px;
       transition: border-color .3s, box-shadow .3s, transform .3s;
     }
@@ -120,218 +75,71 @@
       box-shadow: 0 0 40px rgba(0,210,255,.08), 0 24px 48px rgba(0,0,0,.4);
       transform: translateY(-4px);
     }
-
-    /* ─── Neon Text ────────────────────────────────────── */
-    .neon-text {
-      color: #00d2ff;
-      text-shadow: 0 0 20px rgba(0,210,255,.5), 0 0 60px rgba(0,210,255,.2);
-    }
-    .green-text {
-      color: #28a745;
-      text-shadow: 0 0 20px rgba(40,167,69,.5);
-    }
-
-    /* ─── Gradient Text ────────────────────────────────── */
+    .neon-text { color: #00d2ff; text-shadow: 0 0 20px rgba(0,210,255,.5), 0 0 60px rgba(0,210,255,.2); }
+    .green-text { color: #28a745; text-shadow: 0 0 20px rgba(40,167,69,.5); }
     .grad-text {
       background: linear-gradient(135deg, #00d2ff 0%, #28a745 60%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-
-    /* ─── Buttons ──────────────────────────────────────── */
     .btn-primary {
-      display: inline-flex; align-items: center; gap: .5rem;
-      padding: .85rem 2.2rem;
-      background: linear-gradient(135deg, #00d2ff, #0099bb);
-      color: #0c0f18; font-family: 'Syne', sans-serif; font-weight: 700;
-      border-radius: 50px; border: none; cursor: pointer;
-      box-shadow: 0 0 30px rgba(0,210,255,.3);
-      transition: box-shadow .3s, transform .2s;
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 2.2rem;
+      background: linear-gradient(135deg, #00d2ff, #0099bb); color: #0c0f18; font-family: 'Syne', sans-serif;
+      font-weight: 700; border-radius: 50px; cursor: pointer; box-shadow: 0 0 30px rgba(0,210,255,.3);
+      transition: box-shadow .3s, transform .2s; text-decoration: none;
     }
-    .btn-primary:hover {
-      box-shadow: 0 0 50px rgba(0,210,255,.5);
-      transform: translateY(-2px);
-    }
+    .btn-primary:hover { box-shadow: 0 0 50px rgba(0,210,255,.5); transform: translateY(-2px); }
     .btn-outline {
-      display: inline-flex; align-items: center; gap: .5rem;
-      padding: .85rem 2.2rem;
-      background: transparent;
-      color: #00d2ff; font-family: 'Syne', sans-serif; font-weight: 600;
+      display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 2.2rem;
+      background: transparent; color: #00d2ff; font-family: 'Syne', sans-serif; font-weight: 600;
       border-radius: 50px; border: 1.5px solid rgba(0,210,255,.4); cursor: pointer;
-      transition: border-color .3s, background .3s, transform .2s;
-      text-decoration: none;
+      transition: border-color .3s, background .3s, transform .2s; text-decoration: none;
     }
-    .btn-outline:hover {
-      border-color: #00d2ff;
-      background: rgba(0,210,255,.07);
-      transform: translateY(-2px);
+    .btn-outline:hover { border-color: #00d2ff; background: rgba(0,210,255,.07); transform: translateY(-2px); }
+    .tag {
+      display: inline-flex; align-items: center; padding: .25rem .8rem; border-radius: 99px;
+      font-size: .75rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .04em;
     }
-
-    /* ─── Nav ──────────────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(12,15,24,.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0,210,255,.08);
+    .tag-blue   { background: rgba(0,210,255,.1); border: 1px solid rgba(0,210,255,.2); color: #00d2ff; }
+    .tag-green  { background: rgba(40,167,69,.1); border: 1px solid rgba(40,167,69,.2); color: #28a745; }
+    .tag-purple { background: rgba(124,58,237,.1); border: 1px solid rgba(124,58,237,.2); color: #a78bfa; }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .15em;
+      text-transform: uppercase; color: #00d2ff; opacity: .7;
     }
-
-    /* ─── Coin Counter ─────────────────────────────────── */
-    .coin-ring {
-      width: 120px; height: 120px; border-radius: 50%;
-      border: 2px solid rgba(0,210,255,.3);
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-      box-shadow: 0 0 30px rgba(0,210,255,.15), inset 0 0 30px rgba(0,210,255,.05);
-    }
-    .coin-ring::before {
-      content: '';
-      position: absolute; inset: 6px;
-      border-radius: 50%;
-      border: 1px solid rgba(40,167,69,.2);
-      animation: pulse-ring 2s ease-in-out infinite;
-    }
-    @keyframes pulse-ring {
-      0%,100%{ opacity:.3; transform:scale(1); }
-      50%{ opacity:1; transform:scale(1.05); }
-    }
-    .mining-badge {
-      display: inline-flex; align-items: center; gap: .4rem;
-      padding: .3rem .9rem;
-      background: rgba(40,167,69,.12);
-      border: 1px solid rgba(40,167,69,.25);
-      border-radius: 50px;
-      font-size: .75rem; font-family: 'JetBrains Mono', monospace;
-      color: #28a745;
-    }
-
-    /* ─── Timeline ─────────────────────────────────────── */
+    .stat-bar-track { height: 6px; background: rgba(255,255,255,.06); border-radius: 99px; overflow: hidden; }
+    .stat-bar-fill { height: 100%; border-radius: 99px; transition: width 1.5s cubic-bezier(.16,1,.3,1); }
     .timeline-item { position: relative; padding-left: 2.5rem; }
     .timeline-item::before {
-      content: '';
-      position: absolute; left: 0; top: .35rem;
-      width: 14px; height: 14px; border-radius: 50%;
-      background: #00d2ff;
-      box-shadow: 0 0 16px rgba(0,210,255,.6);
+      content: ''; position: absolute; left: 0; top: .35rem; width: 14px; height: 14px; border-radius: 50%;
+      background: #00d2ff; box-shadow: 0 0 16px rgba(0,210,255,.6);
     }
     .timeline-item::after {
-      content: '';
-      position: absolute; left: 6px; top: 1.5rem;
-      width: 2px; bottom: -1.5rem;
+      content: ''; position: absolute; left: 6px; top: 1.5rem; width: 2px; bottom: -1.5rem;
       background: linear-gradient(to bottom, rgba(0,210,255,.4), rgba(0,210,255,.05));
     }
     .timeline-item:last-child::after { display: none; }
-
-    /* ─── Stat Bars ────────────────────────────────────── */
-    .stat-bar-track {
-      height: 6px; background: rgba(255,255,255,.06); border-radius: 99px; overflow: hidden;
-    }
-    .stat-bar-fill {
-      height: 100%; border-radius: 99px;
-      transition: width 1.5s cubic-bezier(.16,1,.3,1);
-    }
-
-    /* ─── Waitlist Form ────────────────────────────────── */
     .form-input {
-      width: 100%;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(0,210,255,.15);
-      border-radius: 12px;
-      padding: .9rem 1.2rem;
-      color: #e2e8f0;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .95rem;
-      transition: border-color .2s, box-shadow .2s;
-      outline: none;
+      width: 100%; background: rgba(255,255,255,.04); border: 1px solid rgba(0,210,255,.15);
+      border-radius: 12px; padding: .9rem 1.2rem; color: #e2e8f0; font-family: 'DM Sans', sans-serif;
+      transition: border-color .2s; outline: none;
     }
-    .form-input:focus {
-      border-color: rgba(0,210,255,.5);
-      box-shadow: 0 0 0 3px rgba(0,210,255,.1);
+    .form-input:focus { border-color: rgba(0,210,255,.5); box-shadow: 0 0 0 3px rgba(0,210,255,.1); }
+    .coin-ring {
+      width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(0,210,255,.3);
+      display: flex; align-items: center; justify-content: center; position: relative;
+      box-shadow: 0 0 30px rgba(0,210,255,.15), inset 0 0 30px rgba(0,210,255,.05);
     }
-    .form-input::placeholder { color: #4a5568; }
-
-    /* ─── Tag chip ─────────────────────────────────────── */
-    .tag {
-      display: inline-flex; align-items: center;
-      padding: .25rem .8rem;
-      border-radius: 99px;
-      font-size: .75rem; font-family: 'JetBrains Mono', monospace;
-      letter-spacing: .04em;
-    }
-    .tag-blue   { background: rgba(0,210,255,.1);  border: 1px solid rgba(0,210,255,.2);  color: #00d2ff; }
-    .tag-green  { background: rgba(40,167,69,.1);  border: 1px solid rgba(40,167,69,.2);  color: #28a745; }
-    .tag-purple { background: rgba(124,58,237,.1); border: 1px solid rgba(124,58,237,.2); color: #a78bfa; }
-
-    /* ─── Section divider ──────────────────────────────── */
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
-      color: #00d2ff; opacity: .7;
-    }
-
-    /* ─── Floating particles ───────────────────────────── */
-    .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    .particle {
-      position: absolute; width: 3px; height: 3px; border-radius: 50%;
-      background: #00d2ff; opacity: 0;
-      animation: float-up 6s ease-in-out infinite;
-    }
-    @keyframes float-up {
-      0%{ opacity:0; transform:translateY(0) scale(0); }
-      20%{ opacity:.6; }
-      100%{ opacity:0; transform:translateY(-200px) scale(1.5); }
-    }
-
-    /* ─── Pulse dot ────────────────────────────────────── */
-    .pulse-dot {
-      width: 8px; height: 8px; border-radius: 50%; background: #28a745;
-      box-shadow: 0 0 8px #28a745;
-      animation: blink 1.5s ease-in-out infinite;
-    }
-    @keyframes blink { 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
-
-    /* ─── Hero counter ─────────────────────────────────── */
-    .hero-counter {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 3rem; font-weight: 500;
-      color: #00d2ff;
-      text-shadow: 0 0 30px rgba(0,210,255,.4);
-    }
-
-    /* ─── Scroll indicator ─────────────────────────────── */
-    .scroll-indicator {
-      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: .5rem;
-      opacity: .4; animation: fade-bob 2s ease-in-out infinite;
-    }
-    @keyframes fade-bob {
-      0%,100%{ opacity:.4; transform:translateX(-50%) translateY(0); }
-      50%{ opacity:.8; transform:translateX(-50%) translateY(6px); }
-    }
-
-    /* ─── Responsive ───────────────────────────────────── */
-    @media(max-width:768px){
-      .hero-counter { font-size: 2rem; }
-      .coin-ring { width: 80px; height: 80px; }
-    }
-
-    /* ─── Notification toast animation ────────────────── */
-    @keyframes slide-in {
-      from { transform: translateX(120%); opacity: 0; }
-      to   { transform: translateX(0);    opacity: 1; }
-    }
-    @keyframes slide-out {
-      from { transform: translateX(0);    opacity: 1; }
-      to   { transform: translateX(120%); opacity: 0; }
-    }
+    .hero-counter { font-family: 'JetBrains Mono', monospace; font-size: 3rem; font-weight: 500; color: #00d2ff; text-shadow: 0 0 30px rgba(0,210,255,.4); }
     .toast { animation: slide-in .4s cubic-bezier(.16,1,.3,1) forwards; }
     .toast.hide { animation: slide-out .4s ease forwards; }
+    @keyframes slide-in { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slide-out { from { transform: translateX(0); opacity: 1; } to { transform: translateX(120%); opacity: 0; } }
+    @keyframes pulse-ring { 0%,100%{ opacity:.3; transform:scale(1); } 50%{ opacity:1; transform:scale(1.05); } }
+    @media(max-width:768px){ .hero-counter { font-size: 2rem; } .coin-ring { width: 80px; height: 80px; } }
   </style>
 </head>
 <body>
 
-<!-- ═══ Dynamic Background ══════════════════════════════════ -->
 <canvas id="bgCanvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;"></canvas>
 <div class="noise-overlay"></div>
 <div id="aurora" style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;">
@@ -340,925 +148,170 @@
   <div class="aurora-blob" id="ab3"></div>
 </div>
 
-<!-- ═══ NAV ════════════════════════════════════════════════ -->
-<nav>
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background:rgba(12,15,24,.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,210,255,.08);">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div style="width:36px;height:36px;background:linear-gradient(135deg,#00d2ff,#28a745);border-radius:10px;display:flex;align-items:center;justify-content:center;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 3V21M4 7L20 17M20 7L4 17" stroke="white" stroke-width="1" opacity=".4"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="white" stroke-width="1.5"/></svg>
       </div>
-      <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-.01em;">Geni<span class="neon-text">Shield</span></span>
+      <span style="font-family:'Syne',sans-serif;font-weight:800;">Geni<span class="neon-text">Shield</span></span>
     </div>
-
     <div class="hidden md:flex items-center gap-8">
-      <a href="#problem"  class="text-sm text-muted hover:text-white transition-colors" style="font-family:'DM Sans',sans-serif;">The Crisis</a>
-      <a href="#tech"     class="text-sm text-muted hover:text-white transition-colors" style="font-family:'DM Sans',sans-serif;">Technology</a>
-      <a href="#story"    class="text-sm text-muted hover:text-white transition-colors" style="font-family:'DM Sans',sans-serif;">Our Story</a>
-      <a href="#roadmap"  class="text-sm text-muted hover:text-white transition-colors" style="font-family:'DM Sans',sans-serif;">Roadmap</a>
+      <a href="#problem" class="text-sm text-muted hover:text-white transition-colors">The Crisis</a>
+      <a href="#tech" class="text-sm text-muted hover:text-white transition-colors">Technology</a>
+      <a href="#story" class="text-sm text-muted hover:text-white transition-colors">Our Story</a>
+      <a href="#roadmap" class="text-sm text-muted hover:text-white transition-colors">Roadmap</a>
       <a href="#waitlist" class="btn-primary" style="padding:.6rem 1.5rem;font-size:.85rem;">Join Waitlist</a>
     </div>
-
-    <!-- Mobile menu button -->
-    <button id="navToggle" class="md:hidden text-muted hover:text-white">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
+    <button id="navToggle" class="md:hidden text-muted"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
   </div>
-
-  <!-- Mobile Nav -->
   <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 flex flex-col gap-4">
-    <a href="#problem"  class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">The Crisis</a>
-    <a href="#tech"     class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Technology</a>
-    <a href="#story"    class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Our Story</a>
-    <a href="#roadmap"  class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Roadmap</a>
+    <a href="#problem" class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">The Crisis</a>
+    <a href="#tech" class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Technology</a>
+    <a href="#story" class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Our Story</a>
+    <a href="#roadmap" class="text-sm text-muted" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Roadmap</a>
     <a href="#waitlist" class="btn-primary text-center" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Join Waitlist</a>
   </div>
 </nav>
 
-<!-- ═══ HERO ════════════════════════════════════════════════ -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-
-  <!-- Orbs -->
-  <div class="orb orb-blue"  style="top:-10%;left:-8%;"></div>
-  <div class="orb orb-green" style="bottom:5%;right:-5%;"></div>
-
-  <!-- Particles -->
-  <div class="particles" id="particles"></div>
-
+<!-- Hero -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
   <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+    <div class="flex justify-center mb-8" data-aos="fade-down"><div class="tag-green flex items-center gap-2 px-4 py-1 rounded-full"><span class="pulse-dot" style="width:6px;height:6px;background:#28a745;border-radius:50%;animation:blink 1.5s infinite;"></span> LIVE GENI-COIN MINING ACTIVE</div></div>
+    <h1 class="font-display text-[clamp(2.8rem,7vw,6rem)] font-extrabold leading-[1.05] tracking-tight" data-aos="fade-up">Your Health is<br/><span class="grad-text">Your Currency.</span></h1>
+    <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-muted" data-aos="fade-up">Egypt's first behavioral insurance protocol. Stop paying premiums you can't afford — mine coverage through every step, heartbeat, and healthy choice.</p>
+    <div class="flex flex-wrap justify-center gap-4 mt-10" data-aos="fade-up"><a href="#waitlist" class="btn-primary">Join the Waitlist</a><a href="#tech" class="btn-outline">See How It Works</a></div>
 
-    <!-- Live badge -->
-    <div class="flex justify-center mb-8" data-aos="fade-down">
-      <div class="mining-badge">
-        <div class="pulse-dot"></div>
-        LIVE GENI-COIN MINING ACTIVE
-      </div>
-    </div>
-
-    <!-- Main headline -->
-    <h1 class="font-display font-800" style="font-family:'Syne',sans-serif;font-size:clamp(2.8rem,7vw,6.5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;" data-aos="fade-up" data-aos-delay="100">
-      Your Health is<br/>
-      <span class="grad-text">Your Currency.</span>
-    </h1>
-
-    <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style="color:#8892a4;" data-aos="fade-up" data-aos-delay="200">
-      Egypt's first behavioral insurance protocol. Stop paying premiums you can't afford — start mining coverage through every step, heartbeat, and healthy choice you make.
-    </p>
-
-    <!-- CTA buttons -->
-    <div class="flex flex-wrap justify-center gap-4 mt-10" data-aos="fade-up" data-aos-delay="300">
-      <a href="#waitlist" class="btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Join the Waitlist
-      </a>
-      <a href="#tech" class="btn-outline">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        See How It Works
-      </a>
-    </div>
-
-    <!-- Live Coin Miner -->
-    <div class="mt-16 flex flex-wrap justify-center gap-12 items-center" data-aos="fade-up" data-aos-delay="400">
-
-      <div class="flex flex-col items-center gap-3">
-        <div class="coin-ring">
-          <div style="text-align:center;">
-            <div class="hero-counter" id="coinCounter">0</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#28a745;letter-spacing:.1em;">GNI</div>
-          </div>
-        </div>
-        <span style="font-size:.75rem;color:#8892a4;font-family:'JetBrains Mono',monospace;">Coins Mined Today</span>
-      </div>
-
+    <!-- Live stats -->
+    <div class="mt-16 flex flex-wrap justify-center gap-12 items-center" data-aos="fade-up">
+      <div class="flex flex-col items-center gap-3"><div class="coin-ring"><div><div class="hero-counter" id="coinCounter">0</div><div class="text-[.65rem] text-emerald-400 font-mono">GNI</div></div></div><span class="text-xs text-muted font-mono">Coins Mined Today</span></div>
       <div style="width:1px;height:80px;background:rgba(0,210,255,.15);"></div>
-
-      <div class="flex flex-col gap-5">
-        <div class="flex items-center gap-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3c-4 4-4 14 0 18M12 3c4 4 4 14 0 18" stroke="#00d2ff" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:#00d2ff;" id="stepsCounter">0</div>
-            <div style="font-size:.72rem;color:#8892a4;">Steps Validated</div>
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.518 3.516 1 6.993 1C9.259 1 11.3 2.22 12 3.44C12.7 2.22 14.741 1 17.007 1C20.484 1 23 3.518 23 7.191C23 11.296 17.63 16.054 12 21.593z" stroke="#28a745" stroke-width="1.5"/></svg>
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:#28a745;" id="hrCounter">72</div>
-            <div style="font-size:.72rem;color:#8892a4;">BPM Avg (Network)</div>
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="15" rx="3" stroke="#a78bfa" stroke-width="1.5"/><path d="M7 7V4.5a5 5 0 0 1 10 0V7" stroke="#a78bfa" stroke-width="1.5"/></svg>
-          <div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:1.2rem;color:#a78bfa;" id="usersCounter">0</div>
-            <div style="font-size:.72rem;color:#8892a4;">Waitlist Members</div>
-          </div>
-        </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d2ff"><path d="M3 12h18M12 3c-4 4-4 14 0 18M12 3c4 4 4 14 0 18" stroke-width="1.5"/></svg><div><div class="font-mono text-xl text-neon" id="stepsCounter">0</div><div class="text-xs text-muted">Steps Validated</div></div></div>
+        <div class="flex items-center gap-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#28a745"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.518 3.516 1 6.993 1 9.259 1 11.3 2.22 12 3.44c.7-1.22 2.741-2.44 5.007-2.44C20.484 1 23 3.518 23 7.191c0 4.105-5.37 8.863-11 14.402z" stroke-width="1.5"/></svg><div><div class="font-mono text-xl text-emerald-400" id="hrCounter">72</div><div class="text-xs text-muted">BPM Avg</div></div></div>
+        <div class="flex items-center gap-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"><rect x="2" y="7" width="20" height="15" rx="3" stroke-width="1.5"/><path d="M7 7V4.5a5 5 0 0 1 10 0V7" stroke-width="1.5"/></svg><div><div class="font-mono text-xl text-purple-300" id="usersCounter">0</div><div class="text-xs text-muted">Waitlist Members</div></div></div>
       </div>
     </div>
-
-    <!-- Partner logos placeholder -->
-    <div class="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-30" data-aos="fade-up" data-aos-delay="500">
-      <span style="font-size:.75rem;font-family:'JetBrains Mono',monospace;color:#8892a4;letter-spacing:.1em;">BACKED BY VISION FROM</span>
-      <div class="tag tag-blue">AUC</div>
-      <div class="tag tag-green">POLYGON</div>
-      <div class="tag tag-purple">TENSORFLOW</div>
-      <div class="tag tag-blue">FLUTTER</div>
-    </div>
+    <div class="mt-16 flex flex-wrap justify-center gap-6 opacity-40"><span class="text-xs font-mono text-muted">BACKED BY VISION FROM</span><div class="tag tag-blue">AUC</div><div class="tag tag-green">POLYGON</div><div class="tag tag-purple">TENSORFLOW</div><div class="tag tag-blue">FLUTTER</div></div>
   </div>
-
-  <div class="scroll-indicator">
-    <span style="font-size:.65rem;font-family:'JetBrains Mono',monospace;color:#8892a4;letter-spacing:.1em;">SCROLL</span>
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8892a4" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
-  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce opacity-40"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8892a4"><path d="M7 10l5 5 5-5"/></svg></div>
 </section>
 
-<!-- ═══ PROBLEM & SOLUTION ══════════════════════════════════ -->
+<!-- Problem & Solution (with Egypt-specific stats & Pilot strategy) -->
 <section id="problem" class="relative py-32 overflow-hidden">
-  <div class="orb orb-purple" style="top:10%;right:5%;"></div>
-
   <div class="max-w-7xl mx-auto px-6">
-
-    <div class="text-center mb-16" data-aos="fade-up">
-      <div class="section-label mb-3">01 / The Crisis</div>
-      <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-.02em;">
-        A System Built to<br/><span class="neon-text">Exclude You.</span>
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8 items-stretch">
-
-      <!-- Problem side -->
-      <div class="glass-card p-8 relative overflow-hidden" data-aos="fade-right">
-        <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(220,38,38,.08),transparent 70%);pointer-events:none;"></div>
-        <div class="tag mb-6" style="background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.2);color:#f87171;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;">⚠ THE REALITY</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:1.5rem;">Egypt's Health Insurance Blind Spot</h3>
-
-        <div class="flex flex-col gap-6">
-          <div>
-            <div class="flex justify-between mb-2">
-              <span style="font-size:.85rem;color:#8892a4;">Youth Uninsured (18–35)</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#f87171;">70%</span>
-            </div>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="background:linear-gradient(90deg,#dc2626,#f87171);width:0%" data-target="70"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between mb-2">
-              <span style="font-size:.85rem;color:#8892a4;">Freelancers with No Coverage</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#f87171;">85%</span>
-            </div>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="background:linear-gradient(90deg,#dc2626,#f87171);width:0%" data-target="85"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between mb-2">
-              <span style="font-size:.85rem;color:#8892a4;">Diabetics Without Monitoring</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#f87171;">60%</span>
-            </div>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="background:linear-gradient(90deg,#dc2626,#f87171);width:0%" data-target="60"></div></div>
-          </div>
-          <div>
-            <div class="flex justify-between mb-2">
-              <span style="font-size:.85rem;color:#8892a4;">Market Penetration Rate</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#f87171;">&lt;1%</span>
-            </div>
-            <div class="stat-bar-track"><div class="stat-bar-fill" style="background:linear-gradient(90deg,#dc2626,#f87171);width:0%" data-target="1"></div></div>
-          </div>
+    <div class="text-center mb-16"><div class="section-label mb-3">01 / The Crisis</div><h2 class="font-display text-4xl md:text-5xl font-bold">A System Built to<br/><span class="neon-text">Exclude You.</span></h2></div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass-card p-8" data-aos="fade-right">
+        <div class="tag mb-6" style="background:rgba(220,38,38,.1);border-color:rgba(220,38,38,.2);color:#f87171;">⚠ THE REALITY</div>
+        <h3 class="font-display text-2xl font-bold mb-6">Egypt's Health Insurance Blind Spot</h3>
+        <div class="space-y-5">
+          <div><div class="flex justify-between mb-2"><span class="text-sm text-muted">Youth Uninsured (18–35)</span><span class="font-mono text-sm text-red-400">70%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="background:#f87171;width:0%" data-target="70"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span class="text-sm text-muted">Freelancers with No Coverage</span><span class="font-mono text-sm text-red-400">85%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="background:#f87171;width:0%" data-target="85"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span class="text-sm text-muted">Diabetics Without Monitoring</span><span class="font-mono text-sm text-red-400">60%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="background:#f87171;width:0%" data-target="60"></div></div></div>
+          <div><div class="flex justify-between mb-2"><span class="text-sm text-muted">Insurance Penetration Rate</span><span class="font-mono text-sm text-red-400">&lt;2%</span></div><div class="stat-bar-track"><div class="stat-bar-fill" style="background:#f87171;width:0%" data-target="2"></div></div></div>
         </div>
-
-        <div class="mt-8 p-5 rounded-xl" style="background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.12);">
-          <p style="font-size:.9rem;line-height:1.7;color:#cbd5e0;">
-            <span style="color:#f87171;font-weight:600;">11 million Egyptians</span> live with diabetes. Most can't afford preventive monitoring. Traditional insurers either reject them outright or charge premiums that consume 30%+ of monthly income.
-          </p>
-        </div>
+        <div class="mt-8 p-5 rounded-xl bg-red-500/5 border border-red-500/10"><p class="text-sm text-slate-300"><span class="text-red-400 font-bold">12.8 million Egyptians</span> live with diabetes. Most can't afford preventive care. Traditional insurers reject them or charge premiums that consume 30%+ of income.</p></div>
       </div>
-
-      <!-- Solution side -->
-      <div class="glass-card p-8 relative overflow-hidden" data-aos="fade-left">
-        <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(40,167,69,.1),transparent 70%);pointer-events:none;"></div>
+      <div class="glass-card p-8" data-aos="fade-left">
         <div class="tag tag-green mb-6">✦ THE GENI-SHIELD MODEL</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:1.5rem;">Proof of Health Protocol</h3>
-
-        <div class="flex flex-col gap-5">
-          <div class="flex gap-4 p-4 rounded-xl" style="background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.1);">
-            <div style="width:40px;height:40px;border-radius:10px;background:rgba(0,210,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#00d2ff" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <div style="font-family:'Syne',sans-serif;font-weight:600;margin-bottom:.2rem;">Behavioral Mining</div>
-              <div style="font-size:.83rem;color:#8892a4;line-height:1.6;">Every verified step, stable glucose reading, and healthy HR earns Geni-Coins that directly offset your premium.</div>
-            </div>
-          </div>
-
-          <div class="flex gap-4 p-4 rounded-xl" style="background:rgba(40,167,69,.04);border:1px solid rgba(40,167,69,.1);">
-            <div style="width:40px;height:40px;border-radius:10px;background:rgba(40,167,69,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#28a745" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <div style="font-family:'Syne',sans-serif;font-weight:600;margin-bottom:.2rem;">Privacy-First AI</div>
-              <div style="font-size:.83rem;color:#8892a4;line-height:1.6;">Federated Learning processes your biometrics on-device. Your raw health data never leaves your phone.</div>
-            </div>
-          </div>
-
-          <div class="flex gap-4 p-4 rounded-xl" style="background:rgba(124,58,237,.04);border:1px solid rgba(124,58,237,.1);">
-            <div style="width:40px;height:40px;border-radius:10px;background:rgba(124,58,237,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#a78bfa" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <div style="font-family:'Syne',sans-serif;font-weight:600;margin-bottom:.2rem;">Smart Contract Payouts</div>
-              <div style="font-size:.83rem;color:#8892a4;line-height:1.6;">Claims trigger automatically on Polygon blockchain. No paperwork, no brokers, no delays.</div>
-            </div>
-          </div>
+        <h3 class="font-display text-2xl font-bold mb-6">Proof of Health Protocol</h3>
+        <div class="space-y-5">
+          <div class="flex gap-4 p-4 rounded-xl bg-neon/5 border border-neon/10"><div class="w-10 h-10 rounded-lg bg-neon/10 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d2ff"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-width="1.5"/></svg></div><div><div class="font-semibold">Behavioral Mining</div><div class="text-sm text-muted">Every verified step, glucose reading earns Seha-Points that offset premium.</div></div></div>
+          <div class="flex gap-4 p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10"><div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#28a745"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.5"/></svg></div><div><div class="font-semibold">Privacy-First AI (Federated Learning)</div><div class="text-sm text-muted">Your raw health data never leaves your phone — on-device validation.</div></div></div>
+          <div class="flex gap-4 p-4 rounded-xl bg-purple-500/5 border border-purple-500/10"><div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-width="1.5"/></svg></div><div><div class="font-semibold">Smart Contract Payouts</div><div class="text-sm text-muted">Claims trigger automatically on Polygon — no paperwork, no delays.</div></div></div>
         </div>
-
-        <div class="mt-6 p-4 rounded-xl flex items-center justify-between" style="background:rgba(40,167,69,.08);border:1px solid rgba(40,167,69,.15);">
-          <div>
-            <div style="font-size:.78rem;color:#8892a4;margin-bottom:.2rem;">Projected Loss Ratio Reduction</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:1.8rem;color:#28a745;font-weight:500;">-25%</div>
-          </div>
-          <div>
-            <div style="font-size:.78rem;color:#8892a4;margin-bottom:.2rem;">Target Users (Year 2)</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:1.8rem;color:#00d2ff;font-weight:500;">1M+</div>
-          </div>
-          <div>
-            <div style="font-size:.78rem;color:#8892a4;margin-bottom:.2rem;">Market Growth/yr</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:1.8rem;color:#a78bfa;font-weight:500;">20%</div>
-          </div>
-        </div>
+        <div class="mt-6 p-5 rounded-xl flex justify-between items-center bg-emerald-500/10 border border-emerald-500/20"><div><div class="text-xs text-muted">Loss Ratio Reduction</div><div class="font-mono text-2xl text-emerald-400">-25%</div></div><div><div class="text-xs text-muted">Target Users (Year 2)</div><div class="font-mono text-2xl text-neon">1M+</div></div><div><div class="text-xs text-muted">Premium Discount Cap</div><div class="font-mono text-2xl text-purple-300">30%</div></div></div>
       </div>
     </div>
+    <!-- Pilot strategy highlight -->
+    <div class="mt-12 glass-card p-6 text-center" data-aos="fade-up"><div class="tag tag-purple mb-3">Pilot 0→1 Strategy</div><p class="text-sm text-muted">Internal Pilot with 500 employees of partner insurer → Microinsurance trial → FRA Sandbox entry. Proven path to scale with <span class="text-emerald-400">first-mover advantage</span> in Egypt's InsurTech sandbox.</p></div>
   </div>
 </section>
 
-<!-- ═══ TECH PILLARS ════════════════════════════════════════ -->
+<!-- Tech Stack (Federated Learning + PoH + Smart Contracts) -->
 <section id="tech" class="relative py-32">
-  <div class="orb orb-blue" style="bottom:0;left:10%;"></div>
-
   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16" data-aos="fade-up">
-      <div class="section-label mb-3">02 / Technology Stack</div>
-      <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-.02em;">
-        Three Pillars of<br/><span class="green-text">Trustless Health.</span>
-      </h2>
-      <p class="mt-4 max-w-xl mx-auto" style="color:#8892a4;line-height:1.8;">
-        Every component is designed for adversarial environments — where users might cheat, networks fail, and regulators scrutinize.
-      </p>
-    </div>
-
+    <div class="text-center mb-16"><div class="section-label mb-3">02 / Technology Stack</div><h2 class="font-display text-4xl md:text-5xl font-bold">Three Pillars of<br/><span class="green-text">Trustless Health.</span></h2></div>
     <div class="grid md:grid-cols-3 gap-6">
-
-      <!-- Pillar 1: Federated Learning -->
-      <div class="glass-card p-8 tech-card" data-aos="fade-up" data-aos-delay="0">
-        <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(0,210,255,.15),rgba(0,210,255,.05));border:1px solid rgba(0,210,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#00d2ff" stroke-width="1.5"/><path d="M6.3 6.3a7 7 0 1 0 11.4 0M6.3 17.7a7 7 0 1 1 11.4 0" stroke="#00d2ff" stroke-width="1.5" opacity=".5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#00d2ff" stroke-width="1.5" opacity=".3"/></svg>
-        </div>
-        <div class="tag tag-blue mb-4">TensorFlow Federated</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:.8rem;">Federated Learning</h3>
-        <p style="font-size:.88rem;color:#8892a4;line-height:1.8;margin-bottom:1.5rem;">
-          Your biometric data never leaves your device. Instead, only encrypted model gradients are shared with the network — mathematically preventing re-identification of individuals.
-        </p>
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#00d2ff;"></div> Differential privacy guarantees
-          </div>
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#00d2ff;"></div> On-device inference with CoreML / TFLite
-          </div>
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#00d2ff;"></div> GDPR & Egyptian data protection compliant
-          </div>
-        </div>
-        <div class="mt-6 p-4 rounded-xl" style="background:rgba(0,0,0,.3);font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#00d2ff;line-height:1.8;border:1px solid rgba(0,210,255,.08);">
-          <span style="color:#8892a4;">// No raw data transmitted</span><br/>
-          <span style="color:#a78bfa;">model</span>.train(<span style="color:#28a745;">local_data</span>)<br/>
-          <span style="color:#a78bfa;">send</span>(<span style="color:#28a745;">gradients_only</span>)
-        </div>
-      </div>
-
-      <!-- Pillar 2: Proof of Health -->
-      <div class="glass-card p-8 tech-card" data-aos="fade-up" data-aos-delay="100">
-        <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(40,167,69,.15),rgba(40,167,69,.05));border:1px solid rgba(40,167,69,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#28a745" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#28a745" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="tag tag-green mb-4">Anti-Spoofing Protocol</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:.8rem;">Proof of Health (PoH)</h3>
-        <p style="font-size:.88rem;color:#8892a4;line-height:1.8;margin-bottom:1.5rem;">
-          Multi-sensor fusion cross-validates readings: steps must correlate with HR variability, GPS altitude, and accelerometer patterns. Impossible to fake with a single signal.
-        </p>
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#28a745;"></div> Wearable + Phone dual-channel validation
-          </div>
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#28a745;"></div> Liveness detection via camera PPG
-          </div>
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#28a745;"></div> Anomaly score flags replay attacks
-          </div>
-        </div>
-        <div class="mt-6 grid grid-cols-3 gap-2">
-          <div class="p-3 rounded-lg text-center" style="background:rgba(0,0,0,.3);border:1px solid rgba(40,167,69,.1);">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#28a745;">GPS</div>
-            <div style="font-size:.65rem;color:#8892a4;margin-top:.2rem;">Route</div>
-          </div>
-          <div class="p-3 rounded-lg text-center" style="background:rgba(0,0,0,.3);border:1px solid rgba(40,167,69,.1);">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#28a745;">HRV</div>
-            <div style="font-size:.65rem;color:#8892a4;margin-top:.2rem;">Heart</div>
-          </div>
-          <div class="p-3 rounded-lg text-center" style="background:rgba(0,0,0,.3);border:1px solid rgba(40,167,69,.1);">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#28a745;">IMU</div>
-            <div style="font-size:.65rem;color:#8892a4;margin-top:.2rem;">Motion</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pillar 3: Smart Contracts -->
-      <div class="glass-card p-8 tech-card" data-aos="fade-up" data-aos-delay="200">
-        <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(124,58,237,.05));border:1px solid rgba(124,58,237,.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#a78bfa" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round"/><path d="M2 12l10 5 10-5" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
-        </div>
-        <div class="tag tag-purple mb-4">Solidity / Polygon</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:.8rem;">Smart Contracts</h3>
-        <p style="font-size:.88rem;color:#8892a4;line-height:1.8;margin-bottom:1.5rem;">
-          Dynamic premiums recalculate weekly based on your PoH score. Claims under verified thresholds trigger instant on-chain payouts — no human approval needed.
-        </p>
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#a78bfa;"></div> ERC-20 Geni-Coin token (GNI)
-          </div>
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#a78bfa;"></div> Gas fees < $0.001 on Polygon PoS
-          </div>
-          <div class="flex items-center gap-2" style="font-size:.8rem;color:#8892a4;">
-            <div style="width:6px;height:6px;border-radius:50%;background:#a78bfa;"></div> Audited by CertiK before launch
-          </div>
-        </div>
-        <div class="mt-6 p-4 rounded-xl" style="background:rgba(0,0,0,.3);font-family:'JetBrains Mono',monospace;font-size:.73rem;color:#a78bfa;line-height:1.9;border:1px solid rgba(124,58,237,.08);">
-          <span style="color:#8892a4;">if</span> (pohScore &gt; <span style="color:#28a745;">threshold</span>) {<br/>
-          &nbsp;&nbsp;<span style="color:#00d2ff;">mintCoins</span>(user, reward);<br/>
-          &nbsp;&nbsp;<span style="color:#00d2ff;">reducePremium</span>(user);<br/>
-          }
-        </div>
-      </div>
-    </div>
-
-    <!-- How the flow works -->
-    <div class="mt-16 glass-card p-8" data-aos="fade-up">
-      <div class="section-label mb-6 text-center">The Mining Flow</div>
-      <div class="flex flex-wrap justify-center items-center gap-4">
-        <div class="flex flex-col items-center gap-2 text-center px-4">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.2);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="#00d2ff" stroke-width="1.5"/><path d="M9 7h6M9 11h6M9 15h4" stroke="#00d2ff" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <span style="font-size:.78rem;color:#8892a4;">Wearable<br/>Captures Data</span>
-        </div>
-        <svg width="32" height="2" viewBox="0 0 32 2"><line x1="0" y1="1" x2="32" y2="1" stroke="#00d2ff" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
-        <div class="flex flex-col items-center gap-2 text-center px-4">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(40,167,69,.1);border:1px solid rgba(40,167,69,.2);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#28a745" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#28a745" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
-          </div>
-          <span style="font-size:.78rem;color:#8892a4;">FL Model<br/>Validates On-Device</span>
-        </div>
-        <svg width="32" height="2" viewBox="0 0 32 2"><line x1="0" y1="1" x2="32" y2="1" stroke="#28a745" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
-        <div class="flex flex-col items-center gap-2 text-center px-4">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#a78bfa" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#a78bfa" stroke-width="1.5" opacity=".5"/></svg>
-          </div>
-          <span style="font-size:.78rem;color:#8892a4;">PoH Score<br/>Written On-Chain</span>
-        </div>
-        <svg width="32" height="2" viewBox="0 0 32 2"><line x1="0" y1="1" x2="32" y2="1" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
-        <div class="flex flex-col items-center gap-2 text-center px-4">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.2);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#00d2ff" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="#00d2ff" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <span style="font-size:.78rem;color:#8892a4;">GNI Coins<br/>Minted to Wallet</span>
-        </div>
-        <svg width="32" height="2" viewBox="0 0 32 2"><line x1="0" y1="1" x2="32" y2="1" stroke="#00d2ff" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
-        <div class="flex flex-col items-center gap-2 text-center px-4">
-          <div style="width:48px;height:48px;border-radius:50%;background:rgba(40,167,69,.1);border:1px solid rgba(40,167,69,.2);display:flex;align-items:center;justify-content:center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#28a745" stroke-width="1.5"/></svg>
-          </div>
-          <span style="font-size:.78rem;color:#8892a4;">Premium<br/>Automatically Reduced</span>
-        </div>
-      </div>
+      <div class="glass-card p-8" data-aos="fade-up"><div class="w-14 h-14 rounded-2xl bg-neon/10 border border-neon/20 flex items-center justify-center mb-6"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00d2ff"><circle cx="12" cy="12" r="3"/><path d="M6.3 6.3a7 7 0 1 0 11.4 0M6.3 17.7a7 7 0 1 1 11.4 0"/></svg></div><div class="tag tag-blue mb-4">TensorFlow Federated</div><h3 class="font-display text-xl font-bold mb-3">Federated Learning</h3><p class="text-sm text-muted leading-relaxed">Biometric data stays on-device; only encrypted gradients are shared. Differential privacy guarantees. Compliant with Egyptian data protection law.</p><div class="mt-6 p-4 rounded-xl bg-black/30 font-mono text-xs text-neon border border-neon/10"><span class="text-muted">// No raw data transmitted</span><br/>model.train(local_data)<br/>send(gradients_only)</div></div>
+      <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100"><div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#28a745"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="tag tag-green mb-4">Anti-Spoofing Protocol</div><h3 class="font-display text-xl font-bold mb-3">Proof of Health (PoH)</h3><p class="text-sm text-muted leading-relaxed">Multi-sensor fusion: steps + HRV + GPS + accelerometer. Impossible to fake. Liveness detection prevents replay attacks.</p><div class="grid grid-cols-3 gap-2 mt-6"><div class="p-3 rounded-lg bg-black/30 text-center"><div class="font-mono text-xs text-emerald-400">GPS</div><div class="text-[.6rem] text-muted">Route</div></div><div class="p-3 rounded-lg bg-black/30 text-center"><div class="font-mono text-xs text-emerald-400">HRV</div><div class="text-[.6rem] text-muted">Heart</div></div><div class="p-3 rounded-lg bg-black/30 text-center"><div class="font-mono text-xs text-emerald-400">IMU</div><div class="text-[.6rem] text-muted">Motion</div></div></div></div>
+      <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200"><div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="tag tag-purple mb-4">Solidity / Polygon</div><h3 class="font-display text-xl font-bold mb-3">Smart Contracts</h3><p class="text-sm text-muted leading-relaxed">Dynamic premiums recalculated weekly based on PoH score. Claims under threshold trigger instant on-chain payouts. Gas fees &lt; $0.001.</p><div class="mt-6 p-4 rounded-xl bg-black/30 font-mono text-xs text-purple-300 border border-purple-500/10"><span class="text-muted">if</span> (pohScore &gt; threshold) {<br/>&nbsp;&nbsp;mintCoins(user, reward);<br/>&nbsp;&nbsp;reducePremium(user);<br/>}</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ HUMAN STORY ══════════════════════════════════════════ -->
-<section id="story" class="relative py-32 overflow-hidden">
-  <div class="orb orb-green" style="top:20%;left:-5%;"></div>
-  <div class="orb orb-purple" style="bottom:0%;right:10%;"></div>
-
+<!-- Human Story + Zakat Al-Ilm + The 1% Pledge -->
+<section id="story" class="relative py-32">
   <div class="max-w-5xl mx-auto px-6">
-
     <div class="glass-card p-10 md:p-16 relative overflow-hidden" data-aos="fade-up">
-
-      <!-- Decorative quote mark -->
-      <div style="position:absolute;top:2rem;right:2rem;font-size:12rem;font-family:'Syne',sans-serif;font-weight:800;color:rgba(40,167,69,.04);line-height:1;pointer-events:none;user-select:none;">"</div>
-
-      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#28a745,#00d2ff,#7c3aed);"></div>
-
+      <div class="absolute top-6 right-6 text-9xl font-bold text-emerald-500/10">"</div>
       <div class="section-label mb-8">03 / The Human Story</div>
-
-      <div class="flex flex-col md:flex-row gap-10 items-start">
-        <div class="flex-1">
-          <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.5rem;">
-            Born in a<br/><span class="green-text">Seminar Room</span><br/>at AUC.
-          </h2>
-
-          <p style="font-size:1rem;line-height:1.9;color:#cbd5e0;margin-bottom:1.5rem;">
-            It started with a seminar on diabetes management at the American University in Cairo. Patients — engineers, teachers, mothers — were sharing one common fear: not the disease itself, but the <em>cost</em> of managing it. Monitoring strips, insulin, specialist visits, insurance rejections.
-          </p>
-
-          <p style="font-size:1rem;line-height:1.9;color:#cbd5e0;margin-bottom:1.5rem;">
-            That room held a truth the insurance industry ignores: <strong style="color:#28a745;">the people most motivated to stay healthy are the ones who can least afford to.</strong>
-          </p>
-
-          <p style="font-size:1rem;line-height:1.9;color:#cbd5e0;">
-            Geni-Shield is our answer — built on the principle of <span style="color:#00d2ff;font-family:'Syne',sans-serif;font-weight:600;">زكاة العلم</span> (Zakat Al-Ilm). Knowledge that doesn't give back is incomplete. Every line of code, every smart contract, every AI model we write is our way of giving back to the community that raised us.
-          </p>
-        </div>
-
-        <div class="flex flex-col gap-5 md:w-72 flex-shrink-0">
-          <div class="p-5 rounded-xl" style="background:rgba(40,167,69,.06);border:1px solid rgba(40,167,69,.15);">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:2rem;color:#28a745;font-weight:500;">11M+</div>
-            <div style="font-size:.85rem;color:#8892a4;margin-top:.3rem;">Egyptians living with diabetes — our primary focus group</div>
-          </div>
-          <div class="p-5 rounded-xl" style="background:rgba(0,210,255,.06);border:1px solid rgba(0,210,255,.15);">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:2rem;color:#00d2ff;font-weight:500;">30M+</div>
-            <div style="font-size:.85rem;color:#8892a4;margin-top:.3rem;">Freelancers & youth with zero insurance coverage</div>
-          </div>
-          <div class="p-5 rounded-xl" style="background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.15);">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:2rem;color:#a78bfa;font-weight:500;">AUC</div>
-            <div style="font-size:.85rem;color:#8892a4;margin-top:.3rem;">American University in Cairo — birthplace of the idea</div>
-          </div>
-
-          <!-- Social links -->
-          <div class="flex gap-3 mt-2">
-            <a href="https://www.linkedin.com/in/k-ahmed-auc/" target="_blank" class="flex items-center gap-2 text-sm text-muted hover:text-white transition-colors p-3 rounded-xl" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);flex:1;justify-content:center;text-decoration:none;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://github.com/ahmedk-gamal" target="_blank" class="flex items-center gap-2 text-sm text-muted hover:text-white transition-colors p-3 rounded-xl" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);flex:1;justify-content:center;text-decoration:none;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
+      <div class="flex flex-col md:flex-row gap-10">
+        <div class="flex-1"><h2 class="font-display text-3xl md:text-4xl font-bold mb-5">Born in a<br/><span class="green-text">Seminar Room</span><br/>at AUC.</h2><p class="text-base leading-relaxed text-slate-300 mb-4">It started with a diabetes seminar at the American University in Cairo. Patients — engineers, teachers, mothers — shared one fear: not the disease, but the cost of managing it. Insurance rejections, unaffordable premiums.</p><p class="text-base leading-relaxed text-slate-300 mb-4"><strong class="text-emerald-400">The people most motivated to stay healthy are the ones who can least afford to.</strong></p><p class="text-base leading-relaxed text-slate-300">Geni-Shield is built on <span class="text-neon font-bold">زكاة العلم (Zakat Al-Ilm)</span> — knowledge that gives back. 1% of all profits flow into a fund covering uninsured chronic patients. The <span class="text-emerald-400">1% Pledge</span> transforms business into impact.</p></div>
+        <div class="flex flex-col gap-4 md:w-72"><div class="p-5 rounded-xl bg-emerald-500/5 border border-emerald-500/15"><div class="font-mono text-3xl text-emerald-400">12.8M</div><div class="text-xs text-muted">Egyptians with diabetes — primary focus group</div></div><div class="p-5 rounded-xl bg-neon/5 border border-neon/15"><div class="font-mono text-3xl text-neon">30M+</div><div class="text-xs text-muted">Youth & freelancers with zero coverage</div></div><div class="p-5 rounded-xl bg-purple-500/5 border border-purple-500/15"><div class="font-mono text-3xl text-purple-300">AUC</div><div class="text-xs text-muted">Birthplace of the idea & Zakat Al-Ilm pledge</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ ROADMAP ══════════════════════════════════════════════ -->
+<!-- Roadmap (with 1M lives, expansion phases) -->
 <section id="roadmap" class="relative py-32">
   <div class="max-w-4xl mx-auto px-6">
-
-    <div class="text-center mb-16" data-aos="fade-up">
-      <div class="section-label mb-3">04 / Roadmap</div>
-      <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;letter-spacing:-.02em;">
-        12 Months to<br/><span class="neon-text">1 Million Lives.</span>
-      </h2>
-    </div>
-
-    <div class="flex flex-col gap-12" id="timeline">
-
-      <div class="timeline-item" data-aos="fade-right">
-        <div class="glass-card p-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-            <div class="flex items-center gap-3">
-              <div class="tag tag-green">Q2–Q3 2026</div>
-              <div class="tag" style="background:rgba(40,167,69,.15);border:1px solid rgba(40,167,69,.25);color:#28a745;font-family:'JetBrains Mono',monospace;font-size:.7rem;">MVP</div>
-            </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 1</div>
-          </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">Diabetes MVP — Cairo Pilot</h3>
-          <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
-            Launch closed beta with 500 diabetic patients from AUC network. Integrate CGM sensors, validate PoH algorithm, and deploy GNI token on Polygon testnet. Partner with one Egyptian insurer for regulatory sandbox.
-          </p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <div class="tag tag-blue">Flutter App</div>
-            <div class="tag tag-green">CGM Integration</div>
-            <div class="tag tag-purple">Polygon Testnet</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-right" data-aos-delay="50">
-        <div class="glass-card p-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-            <div class="flex items-center gap-3">
-              <div class="tag tag-blue">Q4 2026</div>
-              <div class="tag" style="background:rgba(0,210,255,.15);border:1px solid rgba(0,210,255,.25);color:#00d2ff;font-family:'JetBrains Mono',monospace;font-size:.7rem;">SCALE</div>
-            </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 2</div>
-          </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">Freelancer & Youth Expansion</h3>
-          <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
-            Open beta to 10,000 users targeting freelancers and startup employees. Launch wearable integrations (Apple Watch, Garmin, Xiaomi). Deploy GNI mainnet and enable real premium discounts with insurer partner.
-          </p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <div class="tag tag-blue">Wearable SDK</div>
-            <div class="tag tag-green">10K Users</div>
-            <div class="tag tag-purple">Mainnet Launch</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-        <div class="glass-card p-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-            <div class="flex items-center gap-3">
-              <div class="tag tag-purple">Q1 2027</div>
-              <div class="tag" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.25);color:#a78bfa;font-family:'JetBrains Mono',monospace;font-size:.7rem;">AI+</div>
-            </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 3</div>
-          </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">DNA Insights Layer + B2B Enterprise</h3>
-          <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
-            Introduce optional genomic risk scoring (federated, opt-in only) for hyper-personalized premiums. Launch B2B dashboard for SMEs to offer Geni-Shield as employee benefit. Target 100K active users.
-          </p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <div class="tag tag-blue">Genomics API</div>
-            <div class="tag tag-green">B2B Dashboard</div>
-            <div class="tag tag-purple">100K Users</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-right" data-aos-delay="150">
-        <div class="glass-card p-6" style="border-color:rgba(0,210,255,.25);">
-          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#28a745,#00d2ff,#7c3aed);border-radius:20px 20px 0 0;"></div>
-          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-            <div class="flex items-center gap-3">
-              <div class="tag" style="background:linear-gradient(135deg,rgba(0,210,255,.2),rgba(40,167,69,.2));border:1px solid rgba(0,210,255,.3);color:#00d2ff;font-family:'JetBrains Mono',monospace;font-size:.72rem;">2027 & Beyond</div>
-              <div class="tag" style="background:linear-gradient(135deg,rgba(0,210,255,.15),rgba(40,167,69,.15));border:1px solid rgba(0,210,255,.2);color:#00d2ff;font-family:'JetBrains Mono',monospace;font-size:.7rem;">🌍 EXPAND</div>
-            </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#8892a4;">Phase 4</div>
-          </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:.6rem;">North Africa Expansion</h3>
-          <p style="font-size:.88rem;color:#8892a4;line-height:1.7;">
-            Replicate the Egyptian model in Morocco, Tunisia, and KSA. Reach 1M+ active policyholders. Establish Geni-Shield as the dominant behavioral InsurTech platform for the MENA region's 100M+ uninsured youth.
-          </p>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <div class="tag tag-blue">Morocco</div>
-            <div class="tag tag-green">Tunisia</div>
-            <div class="tag tag-purple">KSA</div>
-            <div class="tag" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#e2e8f0;font-family:'JetBrains Mono',monospace;font-size:.72rem;">1M+ Users</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="text-center mb-16"><div class="section-label mb-3">04 / Roadmap</div><h2 class="font-display text-4xl md:text-5xl font-bold">12 Months to<br/><span class="neon-text">1 Million Lives.</span></h2></div>
+    <div class="flex flex-col gap-10">
+      <div class="timeline-item" data-aos="fade-right"><div class="glass-card p-6"><div class="flex items-center gap-3 mb-3"><div class="tag tag-green">Q2–Q3 2026</div><div class="tag-blue text-xs">MVP</div></div><h3 class="font-display text-xl font-bold mb-2">Diabetes MVP — Cairo Pilot</h3><p class="text-sm text-muted">Closed beta with 500 diabetic patients. CGM integration, PoH algorithm validation, GNI token on Polygon testnet. First insurer partner for FRA sandbox entry.</p><div class="flex flex-wrap gap-2 mt-3"><div class="tag tag-blue">Flutter</div><div class="tag tag-green">CGM sensors</div><div class="tag tag-purple">Polygon</div></div></div></div>
+      <div class="timeline-item" data-aos="fade-right"><div class="glass-card p-6"><div class="flex items-center gap-3 mb-3"><div class="tag tag-blue">Q4 2026</div><div class="tag-green text-xs">SCALE</div></div><h3 class="font-display text-xl font-bold mb-2">Freelancer & Youth Expansion</h3><p class="text-sm text-muted">Open beta 10,000 users. Wearable integrations (Apple Watch, Garmin). Mainnet launch, real premium discounts with insurer partner.</p><div class="flex flex-wrap gap-2 mt-3"><div class="tag tag-blue">Wearable SDK</div><div class="tag tag-green">10K users</div><div class="tag tag-purple">Mainnet</div></div></div></div>
+      <div class="timeline-item" data-aos="fade-right"><div class="glass-card p-6"><div class="flex items-center gap-3 mb-3"><div class="tag tag-purple">Q1 2027</div><div class="tag-blue text-xs">AI+</div></div><h3 class="font-display text-xl font-bold mb-2">Genomic Scoring + B2B Enterprise</h3><p class="text-sm text-muted">Optional federated genomic risk scoring. B2B dashboard for SMEs. Target 100K active members, expansion to hypertension & cardiovascular segments.</p><div class="flex flex-wrap gap-2 mt-3"><div class="tag tag-blue">Genomics API</div><div class="tag tag-green">B2B</div><div class="tag tag-purple">100K</div></div></div></div>
+      <div class="timeline-item" data-aos="fade-right"><div class="glass-card p-6 border-neon/30"><div class="flex items-center gap-3 mb-3"><div class="tag" style="background:linear-gradient(135deg,#00d2ff20,#28a74520);">2027+</div><div class="tag-purple">🌍 EXPAND</div></div><h3 class="font-display text-xl font-bold mb-2">North Africa & MENA Domination</h3><p class="text-sm text-muted">Replicate model in Morocco, Tunisia, KSA. Reach 1M+ active policyholders. Become the dominant behavioral InsurTech platform for 100M+ uninsured youth.</p><div class="flex flex-wrap gap-2 mt-3"><div class="tag tag-blue">Morocco</div><div class="tag tag-green">Tunisia</div><div class="tag tag-purple">KSA</div><div class="tag">1M+ Users</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ WAITLIST ════════════════════════════════════════════ -->
-<section id="waitlist" class="relative py-32 overflow-hidden">
-  <div class="orb orb-blue"   style="top:0;right:10%;"></div>
-  <div class="orb orb-green"  style="bottom:0;left:5%;"></div>
-
-  <div class="max-w-2xl mx-auto px-6 relative z-10">
-
-    <div class="glass-card p-10 md:p-14" data-aos="fade-up">
-      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00d2ff,#28a745);border-radius:20px 20px 0 0;"></div>
-
-      <div class="text-center mb-10">
-        <div class="section-label mb-3">05 / Join Us</div>
-        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1rem;">
-          Be Part of the<br/><span class="grad-text">First Wave.</span>
-        </h2>
-        <p style="font-size:.95rem;color:#8892a4;line-height:1.7;">
-          Join the waitlist as an early user or reach out to partner with us. Together, we make health equity a reality in Egypt.
-        </p>
-      </div>
-
-      <!-- Role selector -->
+<!-- Waitlist (with role selection & 1% pledge mention) -->
+<section id="waitlist" class="relative py-32">
+  <div class="max-w-2xl mx-auto px-6">
+    <div class="glass-card p-10 md:p-14 relative" data-aos="fade-up">
+      <div class="text-center mb-8"><div class="section-label mb-3">05 / Join the Movement</div><h2 class="font-display text-3xl md:text-4xl font-bold">Be Part of the<br/><span class="grad-text">First Wave.</span></h2><p class="text-muted text-sm mt-2">Join waitlist or partner with us — together we make health equity real.</p></div>
       <div class="grid grid-cols-2 gap-3 mb-8">
-        <div class="role-btn glass-card p-4 text-center cursor-pointer transition-all selected-role" data-role="user" onclick="selectRole('user')">
-          <div style="font-size:1.5rem;margin-bottom:.3rem;">🏃‍♂️</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:600;font-size:.9rem;">Early User</div>
-          <div style="font-size:.75rem;color:#8892a4;margin-top:.2rem;">I want to mine health</div>
-        </div>
-        <div class="role-btn glass-card p-4 text-center cursor-pointer transition-all" data-role="partner" onclick="selectRole('partner')">
-          <div style="font-size:1.5rem;margin-bottom:.3rem;">🤝</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:600;font-size:.9rem;">Partner / Investor</div>
-          <div style="font-size:.75rem;color:#8892a4;margin-top:.2rem;">I want to co-build this</div>
-        </div>
+        <div class="role-btn glass-card p-4 text-center cursor-pointer selected-role" data-role="user" onclick="selectRole('user')"><div class="text-2xl">🏃‍♂️</div><div class="font-semibold text-sm">Early User</div><div class="text-xs text-muted">I want to mine health</div></div>
+        <div class="role-btn glass-card p-4 text-center cursor-pointer" data-role="partner" onclick="selectRole('partner')"><div class="text-2xl">🤝</div><div class="font-semibold text-sm">Partner / Investor</div><div class="text-xs text-muted">Let's co-build this</div></div>
       </div>
-
       <div class="flex flex-col gap-4">
-        <div>
-          <label style="display:block;font-size:.8rem;color:#8892a4;margin-bottom:.5rem;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;">YOUR NAME</label>
-          <input id="nameInput" class="form-input" type="text" placeholder="Ahmed Gamal" />
-        </div>
-        <div>
-          <label style="display:block;font-size:.8rem;color:#8892a4;margin-bottom:.5rem;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;">EMAIL ADDRESS</label>
-          <input id="emailInput" class="form-input" type="email" placeholder="you@example.com" />
-        </div>
-        <div id="partnerField" class="hidden">
-          <label style="display:block;font-size:.8rem;color:#8892a4;margin-bottom:.5rem;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;">ORGANIZATION / MESSAGE</label>
-          <textarea id="orgInput" class="form-input" rows="3" placeholder="Tell us about your organization or how you'd like to partner..."></textarea>
-        </div>
-
-        <button class="btn-primary w-full justify-center mt-2" onclick="submitWaitlist()" style="padding:1rem;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          <span id="btnText">Secure My Spot</span>
-        </button>
+        <input id="nameInput" class="form-input" placeholder="Your name" />
+        <input id="emailInput" class="form-input" placeholder="Email address" />
+        <div id="partnerField" class="hidden"><textarea id="orgInput" class="form-input" rows="3" placeholder="Organization or message..."></textarea></div>
+        <button class="btn-primary w-full justify-center py-3" onclick="submitWaitlist()"><span id="btnText">Secure My Spot</span></button>
       </div>
-
-      <p class="text-center mt-6" style="font-size:.75rem;color:#4a5568;">
-        No spam. No selling your data. Ever. That's literally what we're fighting against.
-      </p>
+      <p class="text-center text-xs text-muted mt-6">No spam, no selling your data — that's what we're fighting against. <span class="text-emerald-400">1% of future profits funds uninsured patients.</span></p>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ══════════════════════════════════════════════ -->
-<footer class="relative py-12 border-t" style="border-color:rgba(0,210,255,.08);">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <div style="width:32px;height:32px;background:linear-gradient(135deg,#00d2ff,#28a745);border-radius:8px;display:flex;align-items:center;justify-content:center;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
-        <span style="font-family:'Syne',sans-serif;font-weight:700;">Geni<span class="neon-text">Shield</span></span>
-      </div>
+<footer class="py-12 border-t border-neon/10"><div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4"><div class="flex items-center gap-2"><div class="w-8 h-8 bg-gradient-to-r from-neon to-emerald-400 rounded-lg flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M12 3L20 7V17L12 21L4 17V7L12 3Z"/></svg></div><span class="font-display font-bold">Geni<span class="neon-text">Shield</span></span></div><div class="text-xs text-muted text-center">Built with ❤️ in Cairo, Egypt 🇪🇬 · زكاة العلم — Give Back to Community</div><div class="flex gap-4"><a href="https://www.linkedin.com/in/k-ahmed-auc/" target="_blank" class="text-muted hover:text-white"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a><a href="https://github.com/ahmedk-gamal" target="_blank" class="text-muted hover:text-white"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div></div><div class="text-center text-[.65rem] text-gray-700 mt-4">© 2026 Geni-Shield — Conceptual InsurTech Project. All rights reserved.</div></footer>
 
-      <div style="font-size:.8rem;color:#8892a4;text-align:center;">
-        Built with ❤️ in Cairo, Egypt 🇪🇬 · <span style="color:#28a745;"> </span> — Give Back to Community
-      </div>
+<div id="toast" class="fixed bottom-6 right-6 z-50 hidden"><div class="glass-card p-4 flex items-center gap-3 border-emerald-400/30"><div class="w-9 h-9 rounded-full bg-emerald-400/20 flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#28a745"><path d="M20 6L9 17l-5-5" stroke-width="2"/></svg></div><div><div id="toastTitle" class="font-semibold text-emerald-400">Success!</div><div id="toastMsg" class="text-xs text-muted">Welcome to the future of health.</div></div></div></div>
 
-      <div class="flex items-center gap-4">
-        <a href="https://www.linkedin.com/in/k-ahmed-auc/" target="_blank" class="text-muted hover:text-white transition-colors">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://github.com/ahmedk-gamal" target="_blank" class="text-muted hover:text-white transition-colors">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="text-center mt-8" style="font-size:.72rem;color:#2d3748;font-family:'JetBrains Mono',monospace;">
-      © 2025 Geni-Shield. Conceptual InsurTech Project. All rights reserved.
-    </div>
-  </div>
-</footer>
-
-<!-- Toast notification -->
-<div id="toast" class="fixed bottom-6 right-6 z-50 hidden">
-  <div class="glass-card p-4 flex items-center gap-3" style="border-color:rgba(40,167,69,.3);min-width:280px;">
-    <div style="width:36px;height:36px;border-radius:50%;background:rgba(40,167,69,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <div>
-      <div style="font-family:'Syne',sans-serif;font-weight:600;font-size:.9rem;color:#28a745;" id="toastTitle">You're on the list!</div>
-      <div style="font-size:.78rem;color:#8892a4;" id="toastMsg">We'll reach out soon. Welcome to the future of health.</div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ SCRIPTS ═══════════════════════════════════════════ -->
 <script>
-  // ── AOS init
-  AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
-
-  // ── Mobile nav
-  document.getElementById('navToggle').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-  });
-
-  // ── Particles
-  const particleContainer = document.getElementById('particles');
-  for(let i = 0; i < 18; i++){
-    const p = document.createElement('div');
-    p.className = 'particle';
-    p.style.left  = Math.random()*100 + '%';
-    p.style.top   = Math.random()*100 + '%';
-    p.style.animationDelay = Math.random()*6 + 's';
-    p.style.animationDuration = (4 + Math.random()*4) + 's';
-    if(Math.random() > .5){ p.style.background = '#28a745'; p.style.width='2px'; p.style.height='2px'; }
-    particleContainer.appendChild(p);
-  }
-
-  // ── Counter animation helper
-  function animateCounter(el, end, duration, suffix=''){
-    const start = parseInt(el.textContent) || 0;
-    const step  = (end - start) / (duration / 16);
-    let current = start;
-    const timer = setInterval(() => {
-      current += step;
-      if((step > 0 && current >= end) || (step < 0 && current <= end)){
-        el.textContent = Math.round(end).toLocaleString() + suffix;
-        clearInterval(timer);
-      } else {
-        el.textContent = Math.round(current).toLocaleString() + suffix;
-      }
-    }, 16);
-  }
-
-  // ── Live coin mining counter
-  let coins  = 4827;
-  let steps  = 1203490;
-  let users  = 312;
-  const coinEl  = document.getElementById('coinCounter');
-  const stepsEl = document.getElementById('stepsCounter');
-  const usersEl = document.getElementById('usersCounter');
-
-  animateCounter(coinEl,  coins,  2000);
-  animateCounter(stepsEl, steps,  2500);
-  animateCounter(usersEl, users,  1800);
-
-  setInterval(() => {
-    coins  += Math.floor(Math.random() * 3) + 1;
-    steps  += Math.floor(Math.random() * 50) + 10;
-    users  += (Math.random() > .97) ? 1 : 0;
-    coinEl.textContent  = coins.toLocaleString();
-    stepsEl.textContent = steps.toLocaleString();
-    usersEl.textContent = users.toLocaleString();
-  }, 1800);
-
-  // ── HR fluctuates slightly
-  const hrEl = document.getElementById('hrCounter');
-  setInterval(() => {
-    const v = 70 + Math.floor(Math.random() * 6);
-    hrEl.textContent = v;
-  }, 3000);
-
-  // ── Stat bar animation on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        e.target.querySelectorAll('.stat-bar-fill').forEach(bar => {
-          const t = bar.getAttribute('data-target');
-          setTimeout(() => { bar.style.width = t + '%'; }, 200);
-        });
-      }
-    });
-  }, { threshold: .2 });
+  AOS.init({ duration: 700, once: true, offset: 60 });
+  document.getElementById('navToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('hidden'));
+  let coins = 7234, steps = 1832900, users = 419;
+  const coinEl = document.getElementById('coinCounter'), stepsEl = document.getElementById('stepsCounter'), usersEl = document.getElementById('usersCounter');
+  function animateCounter(el, end, duration) { let start = parseInt(el.innerText) || 0; let step = (end - start) / (duration / 16); let cur = start; let t = setInterval(() => { cur += step; if ((step > 0 && cur >= end) || (step < 0 && cur <= end)) { el.innerText = Math.round(end).toLocaleString(); clearInterval(t); } else el.innerText = Math.round(cur).toLocaleString(); }, 16); }
+  animateCounter(coinEl, coins, 2000); animateCounter(stepsEl, steps, 2500); animateCounter(usersEl, users, 1800);
+  setInterval(() => { coins += Math.floor(Math.random() * 4) + 1; steps += Math.floor(Math.random() * 70) + 20; if (Math.random() > .97) users++; coinEl.innerText = coins.toLocaleString(); stepsEl.innerText = steps.toLocaleString(); usersEl.innerText = users.toLocaleString(); }, 2100);
+  const hrEl = document.getElementById('hrCounter'); setInterval(() => hrEl.innerText = 68 + Math.floor(Math.random() * 7), 3200);
+  const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.querySelectorAll('.stat-bar-fill').forEach(bar => { let t = bar.getAttribute('data-target'); setTimeout(() => bar.style.width = t + '%', 200); }); }); }, { threshold: .2 });
   document.querySelectorAll('#problem .glass-card').forEach(c => observer.observe(c));
-
-  // ── Role selector
   let selectedRole = 'user';
-  function selectRole(role){
-    selectedRole = role;
-    document.querySelectorAll('.role-btn').forEach(b => {
-      b.style.borderColor = 'rgba(0,210,255,.12)';
-      b.style.background  = 'rgba(19,25,41,.7)';
-    });
-    const sel = document.querySelector(`[data-role="${role}"]`);
-    sel.style.borderColor = 'rgba(0,210,255,.4)';
-    sel.style.background  = 'rgba(0,210,255,.07)';
-    document.getElementById('partnerField').classList.toggle('hidden', role !== 'partner');
-    document.getElementById('btnText').textContent = role === 'partner' ? 'Send Partnership Request' : 'Secure My Spot';
-  }
-  selectRole('user'); // init
-
-  // ── Waitlist submission
-  function submitWaitlist(){
-    const name  = document.getElementById('nameInput').value.trim();
-    const email = document.getElementById('emailInput').value.trim();
-    if(!name || !email){ alert('Please fill in your name and email.'); return; }
-    if(!/^[^@]+@[^@]+\.[^@]+$/.test(email)){ alert('Please enter a valid email.'); return; }
-    showToast(
-      selectedRole === 'partner' ? 'Request Received!' : 'You\'re on the list!',
-      selectedRole === 'partner' ? 'We\'ll contact you soon. Let\'s build this together.' : 'We\'ll reach out soon. Welcome to the future of health.'
-    );
-    document.getElementById('nameInput').value  = '';
-    document.getElementById('emailInput').value = '';
-    if(document.getElementById('orgInput')) document.getElementById('orgInput').value = '';
-    users++;
-    usersEl.textContent = users.toLocaleString();
-  }
-
-  function showToast(title, msg){
-    const toast = document.getElementById('toast');
-    document.getElementById('toastTitle').textContent = title;
-    document.getElementById('toastMsg').textContent   = msg;
-    toast.classList.remove('hidden');
-    toast.querySelector('div').classList.add('toast');
-    toast.querySelector('div').classList.remove('hide');
-    setTimeout(() => {
-      toast.querySelector('div').classList.add('hide');
-      setTimeout(() => toast.classList.add('hidden'), 400);
-    }, 4000);
-  }
-
-  // ── Smooth reveal for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if(target){ e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
-
-  // ── Nav scroll effect
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 60){
-      nav.style.background = 'rgba(12,15,24,.95)';
-      nav.style.borderBottomColor = 'rgba(0,210,255,.14)';
-    } else {
-      nav.style.background = 'rgba(12,15,24,.8)';
-      nav.style.borderBottomColor = 'rgba(0,210,255,.08)';
-    }
-  });
-
-  // ── Dynamic Canvas Neural Network Background
-  (function(){
-    const canvas = document.getElementById('bgCanvas');
-    const ctx    = canvas.getContext('2d');
-    let W, H, nodes = [], mouse = { x: -9999, y: -9999 };
-    const NODE_COUNT = 55, CONNECT_DIST = 160, MOUSE_DIST = 200;
-
-    function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-    window.addEventListener('resize', resize); resize();
-
-    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-
-    class Node {
-      constructor(){
-        this.x  = Math.random() * W;
-        this.y  = Math.random() * H;
-        this.vx = (Math.random() - .5) * .35;
-        this.vy = (Math.random() - .5) * .35;
-        this.r  = Math.random() * 1.8 + .8;
-        this.color = Math.random() > .6 ? '#28a745' : Math.random() > .5 ? '#7c3aed' : '#00d2ff';
-      }
-      update(){
-        this.x += this.vx; this.y += this.vy;
-        if(this.x < 0 || this.x > W) this.vx *= -1;
-        if(this.y < 0 || this.y > H) this.vy *= -1;
-        // subtle mouse repulsion
-        const dx = this.x - mouse.x, dy = this.y - mouse.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if(dist < MOUSE_DIST){
-          const force = (MOUSE_DIST - dist) / MOUSE_DIST * .6;
-          this.x += dx / dist * force;
-          this.y += dy / dist * force;
-        }
-      }
-      draw(){
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
-        ctx.fillStyle = this.color;
-        ctx.globalAlpha = .55;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-      }
-    }
-
-    for(let i=0;i<NODE_COUNT;i++) nodes.push(new Node());
-
-    function drawConnections(){
-      for(let i=0;i<nodes.length;i++){
-        for(let j=i+1;j<nodes.length;j++){
-          const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx*dx+dy*dy);
-          if(dist < CONNECT_DIST){
-            const alpha = (1 - dist/CONNECT_DIST) * .18;
-            const grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
-            grad.addColorStop(0, nodes[i].color);
-            grad.addColorStop(1, nodes[j].color);
-            ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = grad;
-            ctx.globalAlpha = alpha;
-            ctx.lineWidth = .8;
-            ctx.stroke();
-            ctx.globalAlpha = 1;
-          }
-        }
-      }
-    }
-
-    function loop(){
-      ctx.clearRect(0, 0, W, H);
-      nodes.forEach(n => { n.update(); n.draw(); });
-      drawConnections();
-      requestAnimationFrame(loop);
-    }
-    loop();
-  })();
-
-  // ── Heartbeat SVG line animation in hero coin ring
-  (function(){
-    const ring = document.querySelector('.coin-ring');
-    if(!ring) return;
-    const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-    svg.setAttribute('viewBox','0 0 120 30');
-    svg.setAttribute('width','80'); svg.setAttribute('height','20');
-    svg.style.cssText = 'position:absolute;bottom:8px;left:50%;transform:translateX(-50%);opacity:.4;';
-    const path = document.createElementNS('http://www.w3.org/2000/svg','polyline');
-    path.setAttribute('points','0,15 20,15 25,5 30,25 35,10 40,15 60,15 65,5 70,25 75,10 80,15 100,15 105,5 110,25 115,10 120,15');
-    path.setAttribute('fill','none'); path.setAttribute('stroke','#28a745'); path.setAttribute('stroke-width','1.5');
-    path.style.cssText = 'stroke-dasharray:300;stroke-dashoffset:300;animation:hb 2.5s linear infinite;';
-    svg.appendChild(path);
-    ring.appendChild(svg);
-    const style = document.createElement('style');
-    style.textContent = '@keyframes hb{0%{stroke-dashoffset:300}100%{stroke-dashoffset:-300}}';
-    document.head.appendChild(style);
-  })();
+  window.selectRole = (role) => { selectedRole = role; document.querySelectorAll('.role-btn').forEach(b => { b.style.borderColor = 'rgba(0,210,255,.12)'; b.style.background = 'rgba(19,25,41,.7)'; }); let sel = document.querySelector(`[data-role="${role}"]`); sel.style.borderColor = 'rgba(0,210,255,.4)'; sel.style.background = 'rgba(0,210,255,.07)'; document.getElementById('partnerField').classList.toggle('hidden', role !== 'partner'); document.getElementById('btnText').innerText = role === 'partner' ? 'Send Partnership Request' : 'Secure My Spot'; };
+  selectRole('user');
+  window.submitWaitlist = () => { let name = document.getElementById('nameInput').value.trim(), email = document.getElementById('emailInput').value.trim(); if (!name || !email) return alert('Please fill name and email.'); if (!/^[^\s@]+@([^\s@]+\.)+[^\s@]+$/.test(email)) return alert('Valid email required.'); showToast(selectedRole === 'partner' ? 'Request Received!' : 'You’re on the list!', selectedRole === 'partner' ? 'We’ll contact you. Let’s build this together.' : 'Welcome to the health mining revolution.'); document.getElementById('nameInput').value = ''; document.getElementById('emailInput').value = ''; if (document.getElementById('orgInput')) document.getElementById('orgInput').value = ''; users++; usersEl.innerText = users.toLocaleString(); };
+  function showToast(title, msg) { let toast = document.getElementById('toast'); document.getElementById('toastTitle').innerText = title; document.getElementById('toastMsg').innerText = msg; toast.classList.remove('hidden'); toast.querySelector('div').classList.add('toast'); setTimeout(() => { toast.querySelector('div').classList.add('hide'); setTimeout(() => toast.classList.add('hidden'), 400); }, 3800); }
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { let t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } }));
+  (function() { const canvas = document.getElementById('bgCanvas'), ctx = canvas.getContext('2d'); let W, H, nodes = [], mouse = { x: -9999, y: -9999 }; const NODE_COUNT = 48, CONNECT_DIST = 150; function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; } window.addEventListener('resize', resize); resize(); window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }); class Node { constructor() { this.x = Math.random() * W; this.y = Math.random() * H; this.vx = (Math.random() - .5) * .25; this.vy = (Math.random() - .5) * .25; this.r = Math.random() * 1.6 + .8; this.color = Math.random() > .6 ? '#28a745' : Math.random() > .5 ? '#7c3aed' : '#00d2ff'; } update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > W) this.vx *= -1; if (this.y < 0 || this.y > H) this.vy *= -1; let dx = this.x - mouse.x, dy = this.y - mouse.y, dist = Math.hypot(dx, dy); if (dist < 180) { let force = (180 - dist) / 180 * .5; this.x += dx / dist * force; this.y += dy / dist * force; } } draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.globalAlpha = .5; ctx.fill(); } } for (let i = 0; i < NODE_COUNT; i++) nodes.push(new Node()); function drawLines() { for (let i = 0; i < nodes.length; i++) { for (let j = i + 1; j < nodes.length; j++) { let d = Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y); if (d < CONNECT_DIST) { let grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y); grad.addColorStop(0, nodes[i].color); grad.addColorStop(1, nodes[j].color); ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.strokeStyle = grad; ctx.globalAlpha = (1 - d / CONNECT_DIST) * .14; ctx.lineWidth = .7; ctx.stroke(); } } } } function loop() { ctx.clearRect(0, 0, W, H); nodes.forEach(n => { n.update(); n.draw(); }); drawLines(); requestAnimationFrame(loop); } loop(); })();
+  const ring = document.querySelector('.coin-ring'); if (ring) { const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('viewBox', '0 0 120 24'); svg.setAttribute('width', '70'); svg.style.position = 'absolute'; svg.style.bottom = '6px'; svg.style.left = '50%'; svg.style.transform = 'translateX(-50%)'; svg.style.opacity = '.5'; const path = document.createElementNS('http://www.w3.org/2000/svg', 'polyline'); path.setAttribute('points', '0,12 20,12 24,4 30,20 36,8 42,12 60,12 64,4 70,20 76,8 82,12 100,12 104,4 110,20 116,8 120,12'); path.setAttribute('fill', 'none'); path.setAttribute('stroke', '#28a745'); path.setAttribute('stroke-width', '1.2'); path.style.strokeDasharray = '300'; path.style.strokeDashoffset = '300'; path.style.animation = 'hb 2.4s linear infinite'; svg.appendChild(path); ring.appendChild(svg); const style = document.createElement('style'); style.textContent = '@keyframes hb { 0% { stroke-dashoffset:300 } 100% { stroke-dashoffset:-300 } }'; document.head.appendChild(style); }
 </script>
 </body>
 </html>
